@@ -1,19 +1,22 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:mechat/Chat.dart';
 
 void main() {
   runApp(MaterialApp(
     initialRoute: "/",
     routes: {
       "/": (context) => const UI(),
+      "/chat": (context) => const Chat()
     },
   ));
 }
 
 class UI extends StatefulWidget {
-  const UI({Key? key}) : super(key: key);
+  const UI({key}) : super(key: key);
 
   @override
   _UIState createState() => _UIState();
@@ -24,8 +27,8 @@ class _UIState extends State<UI> {
     "Schatz <3",
     "Diker Affe",
     "Päthär",
-    "Päthär",
-    "Päthär",
+    "Pamina",
+    "Turboooo",
     "Päthär",
     "Päthär",
     "Päthär",
@@ -91,6 +94,7 @@ class _UIState extends State<UI> {
                         child: oneChat(textList[index]),
                         onTap: () {
                           print(textList[index]);
+                          Navigator.pushNamed(context, "/chat");
                         });
                   }),
             ),
